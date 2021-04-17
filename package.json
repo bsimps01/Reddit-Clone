@@ -9,7 +9,10 @@
   "author": "Ben Simpson <Benjamin5311@aol.com> (https://www.makeschool.com/portfolio/ben-simpson)",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.0"
+    "express-handlebars": "^5.3.0",
+    "express-validator": "^5.3.1",
+    "mongoose": "^5.12.4"
   }
 }
