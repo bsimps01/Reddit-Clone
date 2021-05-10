@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Ben Simpson <Benjamin5311@aol.com> (https://www.makeschool.com/portfolio/ben-simpson)",
   "license": "MIT",
@@ -15,5 +15,10 @@
     "express-validator": "^5.3.1",
     "mongoose": "^5.12.4",
     "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.3.2"
   }
 }

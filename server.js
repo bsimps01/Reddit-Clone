@@ -41,4 +41,4 @@ app.listen(3000, () => {
   console.log('Reddit Clone on port localhost:3000!');
 });
 
-module.exports = app
+module.exports = app;
