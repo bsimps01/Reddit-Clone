@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
+const port = 3000
 
 // App Setup
 const app = express();
@@ -26,7 +27,7 @@ app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
   res.render('home')
-})
+});
 
 app.get('/posts/new', (req, res) => {
     res.render('posts-new')
@@ -36,8 +37,19 @@ app.get('/posts/new', (req, res) => {
 require('./controllers/posts.js')(app);
 //require('./controllers/comments.js')(app);
 
+  // SUBREDDIT
+  app.get("/n/:subreddit", function(req, res) {
+    Post.find({ subreddit: req.params.subreddit }).lean()
+      .then(posts => {
+        res.render("posts-index", { posts });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+
 // Start Server
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Reddit Clone on port localhost:3000!');
 });
 
